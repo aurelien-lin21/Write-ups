@@ -1,4 +1,4 @@
-## FTP – Authentication
+# FTP – Authentication
 
 ## Contexte
 - **Catégorie** : Network  
@@ -8,22 +8,18 @@
 
 ---
 
-### Étapes de la résolution
+## Étapes de la résolution
 
-## Étape 1 : Récupération du fichier
-- Télécharger le fichier `ch1.pcap` depuis l’interface du challenge Root-Me.  
-- Ouvrir le fichier directement dans **Wireshark**.
+### Étape 1 : Récupération du fichier
+Le fichier `ch1.pcap` est fourni par Root-Me. Une fois téléchargé, je l’ai ouvert directement dans **Wireshark** pour commencer l’analyse.
 
-## Étape 2 : Filtrer le trafic FTP
-- Dans la barre de filtre de Wireshark, entrer : `ftp`.
-- Ce filtre permet d’afficher uniquement les paquets liés au protocole FTP.
+### Étape 2 : Filtrer le trafic FTP
+Dans la barre de filtre Wireshark, j’ai appliqué le filtre `ftp`. Cela permet de réduire l’affichage aux seuls paquets liés au protocole FTP.
   
-## Étape 3 : Suivre le flux TCP
-- Sélectionner un paquet FTP (par exemple une commande `USER` ou `PASS`).  
-- Clic droit → **Follow → TCP Stream**.  
-- La fenêtre du flux complet apparaît, contenant les échanges FTP en clair.
+### Étape 3 : Suivre le flux TCP
+En sélectionnant un paquet FTP contenant la commande `USER` ou `PASS`, puis en choisissant **Follow → TCP Stream**, on peut visualiser la conversation complète. Les identifiants apparaissent alors en clair.
 
-## Étape 4 : Extraction des identifiants
-Dans le flux, on retrouve les informations suivantes :
-  - **Nom d’utilisateur** : `cdts3500`  
-  - **Mot de passe (flag)** : `cdts3500`  
+### Étape 4 : Extraction des identifiants
+Dans le flux TCP suivi, les identifiants s’affichent directement :
+  - **Nom d’utilisateur** : `c******0`  
+  - **Mot de passe (flag)** : `c******0`

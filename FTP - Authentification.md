@@ -11,3 +11,12 @@ Objectif : analyser une capture réseau pour extraire un mot de passe transmis v
 
 2. **Filtrage du protocole FTP**
    J’ai appliqué le filtre : ftp
+   pour afficher uniquement les paquets FTP.
+
+4. **Suivi de la session FTP**
+   J’ai cliqué droit sur un paquet → **Follow → TCP Stream** pour reconstituer la session complète.
+
+5. **Récupération du mot de passe**
+   Dans la fenêtre, j’ai trouvé :
+      USER utilisateur
+      PASS c******0

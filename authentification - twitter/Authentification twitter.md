@@ -15,17 +15,21 @@
 
 Le challenge fournit un fichier `.pcap` contenant une session Twitter. Une fois téléchargé, je l'ai ouvert directement dans **Wireshark**.
 
+![Capture flux](flux.png)
+
 ### Étape 2 : Suivi du flux TCP
 
 En examinant la capture, on remarque qu’il n’y a **qu’un seul paquet**.  
 J’ai utilisé **Follow → TCP Stream** sur ce paquet pour visualiser l’intégralité de la session.
 
-![Capture suivi du flux TCP](twitter_tcp_stream.png)
+![Capture suivi du flux TCP](follow-tcp.png)
 
 ### Étape 3 : Repérage de l’en-tête Authorization
 
 Dans le flux TCP, on repère un en-tête `Authorization` : **Basic dXNlcnRlc3Q6cGFzc3dvcmQ=**
 Cet en-tête utilise la technique **Basic Authorization**, et la chaîne semble encodée en base64.
+
+![Capture authorization](authorization.png)
 
 ### Étape 4 : Décodage du token en base64
 
@@ -38,3 +42,5 @@ echo "dXNlcnRlc3Q6cGFzc3dvcmQ=" | base64 --decode
 ### Étape 5 : Extraction du mot de passe
 
 Le mot de passe extrait est :
+
+![Capture pass](pass.png)

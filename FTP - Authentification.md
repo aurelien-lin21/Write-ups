@@ -1,22 +1,19 @@
-# Root-Me Write-Up : FTP - Authentification
+## FTP – Authentication
 
-Récemment, j’ai résolu le challenge **FTP – Authentification** sur [Root-Me](https://www.root-me.org/fr/Challenges/Reseau/FTP-Authentification).  
-Objectif : analyser une capture réseau pour extraire un mot de passe transmis via FTP.
+## Contexte
+- **Enseigne** : Network  
+- **Challenge** : FTP – Authentication  
+- **Objectif** : Analyser un fichier de capture `.pcap` afin de retrouver les identifiants FTP (`USER` et `PASS`).  
+- **Compétence démontrée** : Analyse de trafic réseau avec Wireshark, utilisation de filtres, extraction d’identifiants en clair.
 
+---
 
-## Étapes de la résolution
+### Étapes de la résolution
 
-1. **Ouverture du fichier dans Wireshark**
-   J’ai ouvert le fichier `.pcap` fourni dans Wireshark.
+## Étape 1 : Récupération du fichier
+- Télécharger le fichier `ch1.pcap` depuis l’interface du challenge Root-Me.  
+- Ouvrir le fichier directement dans **Wireshark**.
 
-2. **Filtrage du protocole FTP**
-   J’ai appliqué le filtre : ftp
-   pour afficher uniquement les paquets FTP.
-
-4. **Suivi de la session FTP**
-   J’ai cliqué droit sur un paquet → **Follow → TCP Stream** pour reconstituer la session complète.
-
-5. **Récupération du mot de passe**
-   Dans la fenêtre, j’ai trouvé :
-      USER utilisateur
-      PASS c******0
+## Étape 2 : Filtrer le trafic FTP
+- Dans la barre de filtre de Wireshark, entrer : `ftp`.
+  
